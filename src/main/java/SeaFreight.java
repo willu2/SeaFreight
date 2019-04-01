@@ -5,7 +5,7 @@ public class SeaFreight {
         PortDB portDB = new PortDB();
 
        //String[][]kk =
-               portDB.makeDestination(PortDB.ports);
+               portDB.makePortsMap(portDB.makePortArray());
       //  portDB.addPrice(kk, PortDB.ports);
     }
 }
