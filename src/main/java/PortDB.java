@@ -25,7 +25,6 @@ public class PortDB {
 
     //creates ports map destinations and prices {from >> to ; weight, price}
     public void makePortsMap(){
-
         portArray = makePortSizeArray();
 
         int raw = 0;
@@ -73,13 +72,38 @@ public class PortDB {
         }
     }
 
+    //print All data like table;
+    public void printOneRawMap(String[][] portArray){
+         for (int i = 0; i < portArray.length; i++) {
+            for (int j = 0; j < portArray[i].length; j++) {
+                switch (j){
+                    case 0:
+                        System.out.print(portArray[i][j] + " <<<___>>> " );
+                        break;
+                    case 1:
+                        System.out.print(portArray[i][j] + "  ---|Distance >>  ");
+                        break;
+                    case 2:
+                        System.out.print(portArray[i][j] + " km ||| ");
+                        break;
+                    case 3:
+                        System.out.print(portArray[i][j] + " kg ## price_>> ");
+                        break;
+                    case 4:
+                        System.out.print(portArray[i][j] + "_$");
+                        break;
+                }
+            }
+             System.out.println();
+        }
+    }
+
     // add price dinamicaly
     public void addPrice(String[][] priceList){
         Random random = new Random();
         for (int i = 0; i < priceList.length; i++) {
             int colum = 0;
             for (int j = 2; j < priceList[i].length; j++) {
-
                 if (j == 2) {
                     priceList[i][j] = String.valueOf(random.nextInt(14000) + 2500);
                 } else if (j == 3) {
@@ -95,10 +119,45 @@ public class PortDB {
     public void printAllVariants() {
         printArrayMap(portArray);
     }
-        public void searchByPrice(int bill){
-        }
 
+    public void searchByPrice() {
+        int cash = 120000;
+        int dataCash = 0;
+        for (int i = 0; i < portArray.length; i++) {
+            dataCash = Integer.parseInt(portArray[i][4]);
+            if (dataCash < cash) {
+                for (int j = 0; j < portArray[i].length; j++) {
+                //    printOneRawMap(portArray[i][j]);
+
+
+                    switch (j){
+                        case 0:
+                            System.out.print(portArray[i][j] + " <<<___>>> " );
+                            break;
+                        case 1:
+                            System.out.print(portArray[i][j] + "  ---|Distance >>  ");
+                            break;
+                        case 2:
+                            System.out.print(portArray[i][j] + " km ||| ");
+                            break;
+                        case 3:
+                            System.out.print(portArray[i][j] + " kg ## price_>> ");
+                            break;
+                        case 4:
+                            System.out.print(portArray[i][j] + "_$");
+                            break;
+                    }
+                }
+                System.out.println();
+                //  System.out.print(portArray[i][j]+"___");
+
+                    //System.out.println();
+                }
+            }
+        }
     }
+
+
 
 
 

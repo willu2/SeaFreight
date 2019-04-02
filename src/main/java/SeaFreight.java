@@ -24,9 +24,9 @@ public class SeaFreight {
                         portDB.printAllVariants();
                         break;
                     case 2:
-                        menu.grupeShow();
-                        pos = Integer.parseInt(in.readLine());
-                        //portDB.showItemsByGrupeName(pos);
+                       // menu.grupeShow();
+                       // pos = Integer.parseInt(in.readLine());
+                        portDB.searchByPrice();
                         break;
                     case 3:
                         menu.grupeShow();
