@@ -8,14 +8,12 @@ public class SeaFreight {
         boolean exit = false;
 
         MenuBuilder menu = new MenuBuilder();
-        PortDB portDB = new PortDB();
-        portDB.makePortsMap();
+        PortController controller = new PortController();
+        controller.loadAllDataFreigts();
 
-        portDB.printAllVariants();
-
-        /*do {
+        do {
             int pos = 0;
-            double price = 0.0;
+            int price = 0;
 
             menu.mainManu();
 
@@ -23,23 +21,30 @@ public class SeaFreight {
             try {
                 switch (pos = Integer.parseInt(in.readLine())) {
                     case 1:
-                        portDB.printAllVariants();
+                        controller.printAllVariants();
                         break;
                     case 2:
-                       // menu.grupeShow();
-                       // pos = Integer.parseInt(in.readLine());
-                        portDB.searchByPrice(120000);
+                        menu.priceEnter();;
+                        price = Integer.parseInt(in.readLine());
+                        controller.searchByPrice(price);
                         break;
                     case 3:
-                        pos = Integer.parseInt(in.readLine());
-                        menu.priceEnter();
-                        price = Double.parseDouble(in.readLine());
-                        //market.showGrupeLowLimit(pos, price);
+                        controller.showHighestPric();
                         break;
                     case 4:
-                       // market.showGrupeHightLimit(pos, price);
+                        controller.showLowPric();
                         break;
+                    case 5:
+                        controller.showHightSped();
+                        break;
+                    case 6:
+                        controller.showLowPric();
+                        break;
+                    case 7:
+                        controller.showMinMass();
                     case 8:
+                        controller.showMaxMass();
+                    case 9:
                         exit = true;
                         break;
                     default:
@@ -50,7 +55,7 @@ public class SeaFreight {
                 e.printStackTrace();
             }
 
-        }while (!exit);*/
+        }while (!exit);
 
     }
 }
