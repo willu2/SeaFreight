@@ -6,9 +6,9 @@ public class SeaFreight {
     public static void main(String[] args) {
 
         boolean exit = false;
-
+PortDB  portDB = new PortDB();
         MenuBuilder menu = new MenuBuilder();
-        PortControllerImpl controller = new PortControllerImpl();
+        PortController controller = new PortController();
         controller.loadAllDataFreigts();
 
         do {
@@ -42,8 +42,10 @@ public class SeaFreight {
                         break;
                     case 7:
                         controller.showMinMass();
+                        break;
                     case 8:
                         controller.showMaxMass();
+                        break;
                     case 9:
                         exit = true;
                         break;

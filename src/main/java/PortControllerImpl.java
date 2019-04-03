@@ -1,9 +1,9 @@
-public class PortControllerImpl extends PortController {
+public class PortControllerImpl  {
 
     private PortDB portDB = new PortDB();
     private String[][] portArray = portDB.getPortArray();
 
-    public void showHighestPric(){
+    /*public void showHighestPric(){
         showHighestPrice(portArray);
     }
     public void showLowPric(){
@@ -25,5 +25,5 @@ public class PortControllerImpl extends PortController {
 
     public void showMinMass(){
         showMinMass(portArray);
-    }
+    }*/
 }

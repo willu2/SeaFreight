@@ -1,11 +1,12 @@
 public class PortController implements DBimplements {
 
     private PortDB portDB = new PortDB();
-    private String[][] portArray = portDB.getPortArray();
+    private String[][] portArray;// = portDB.getPortArray();
 
     @Override
     public void loadAllDataFreigts() {
         portDB.makePortsMap();
+        portArray = portDB.getPortArray();
     }
 
     @Override
@@ -170,6 +171,30 @@ public class PortController implements DBimplements {
     @Override
     public void printAllVariants() {
         printArrayMap(portArray);
+    }
+
+    public void showHighestPric(){
+        showHighestPrice(portArray);
+    }
+    public void showLowPric(){
+        showLowestPrice(portArray);
+    }
+
+    public void showHightSpeed(){
+        showHIghtSpeed(portArray);
+    }
+
+    public void showLowSpeed(){
+        showLowSpeed(portArray);
+    }
+
+
+    public void showMaxMass(){
+        showMaxMass(portArray);
+    }
+
+    public void showMinMass(){
+        showMinMass(portArray);
     }
 
 
