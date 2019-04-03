@@ -8,7 +8,7 @@ public class SeaFreight {
         boolean exit = false;
 
         MenuBuilder menu = new MenuBuilder();
-        PortController controller = new PortController();
+        PortControllerImpl controller = new PortControllerImpl();
         controller.loadAllDataFreigts();
 
         do {
@@ -24,7 +24,7 @@ public class SeaFreight {
                         controller.printAllVariants();
                         break;
                     case 2:
-                        menu.priceEnter();;
+                        menu.priceEnter();
                         price = Integer.parseInt(in.readLine());
                         controller.searchByPrice(price);
                         break;
@@ -35,10 +35,10 @@ public class SeaFreight {
                         controller.showLowPric();
                         break;
                     case 5:
-                        controller.showHightSped();
+                        controller.showHightSpeed();
                         break;
                     case 6:
-                        controller.showLowPric();
+                        controller.showLowSpeed();
                         break;
                     case 7:
                         controller.showMinMass();

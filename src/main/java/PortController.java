@@ -8,10 +8,6 @@ public class PortController implements DBimplements {
         portDB.makePortsMap();
     }
 
-    public void showLowPric(){
-        showLowestPrice(portArray);
-    }
-
     @Override
     public void showLowestPrice(String[][] portArray) {
         boolean isSorted2 = false;
@@ -33,12 +29,8 @@ public class PortController implements DBimplements {
         }
         printArrayMap(portArray);
 
-       // System.out.println();
     }
 
-    public void showHighestPric(){
-        showHighestPrice(portArray);
-    }
 
     @Override
     public void showHighestPrice(String[][] portArray) {
@@ -64,9 +56,6 @@ public class PortController implements DBimplements {
        // System.out.println();
     }
 
-    public void showHightSped(){
-        showHIghtSpeed(portArray);
-    }
 
     @Override
     public void showHIghtSpeed(String[][] portArray) {
@@ -110,7 +99,6 @@ public class PortController implements DBimplements {
             }
         }
         printArrayMap(portArray);
-        System.out.println();
     }
 
     @Override
@@ -132,7 +120,6 @@ public class PortController implements DBimplements {
             }
         }
         printArrayMap(portArray);
-        System.out.println();
     }
 
     @Override
@@ -154,7 +141,6 @@ public class PortController implements DBimplements {
             }
         }
         printArrayMap(portArray);
-        System.out.println();
     }
 
 
@@ -184,12 +170,6 @@ public class PortController implements DBimplements {
     @Override
     public void printAllVariants() {
         printArrayMap(portArray);
-    }
-    public void showMinMass(){
-        showMinMass(portArray);
-    }
-    public void showMaxMass(){
-        showMaxMass(portArray);
     }
 
 
