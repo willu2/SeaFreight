@@ -11,7 +11,9 @@ public class SeaFreight {
         PortDB portDB = new PortDB();
         portDB.makePortsMap();
 
-        do {
+        portDB.printAllVariants();
+
+        /*do {
             int pos = 0;
             double price = 0.0;
 
@@ -26,20 +28,15 @@ public class SeaFreight {
                     case 2:
                        // menu.grupeShow();
                        // pos = Integer.parseInt(in.readLine());
-                        portDB.searchByPrice();
+                        portDB.searchByPrice(120000);
                         break;
                     case 3:
-                        menu.grupeShow();
                         pos = Integer.parseInt(in.readLine());
                         menu.priceEnter();
                         price = Double.parseDouble(in.readLine());
                         //market.showGrupeLowLimit(pos, price);
                         break;
                     case 4:
-                        menu.grupeShow();
-                        pos = Integer.parseInt(in.readLine());
-                        menu.priceEnter();
-                        price = Double.parseDouble(in.readLine());
                        // market.showGrupeHightLimit(pos, price);
                         break;
                     case 8:
@@ -53,7 +50,7 @@ public class SeaFreight {
                 e.printStackTrace();
             }
 
-        }while (!exit);
+        }while (!exit);*/
 
     }
 }
