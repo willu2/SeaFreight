@@ -25,7 +25,18 @@ PortDB  portDB = new PortDB();
                         break;
                     case 2:
                         menu.priceEnter();
-                        price = Integer.parseInt(in.readLine());
+                        try {
+                            price = Integer.parseInt(in.readLine());
+                        }catch(IOException e){
+                            System.out.println("Input error");
+                            System.exit(1);
+                        }
+                        catch(NumberFormatException e)
+                        {
+                            System.out.println(e.getMessage() + " is not numeric");
+                           // System.exit(1);
+                        }
+
                         controller.searchByPrice(price);
                         break;
                     case 3:

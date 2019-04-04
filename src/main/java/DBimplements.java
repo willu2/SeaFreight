@@ -7,10 +7,8 @@ interface DBimplements {
         void showMinMass(String[][] portArray);
         void showMaxMass(String[][] portArray);
 
-        //print All data like table;
-        //void printArrayMap(String[][] portArray);
         void searchByPrice(int casch);
-        void printAllVariants();
 
+        void printAllVariants();
         void loadAllDataFreigts();
 }

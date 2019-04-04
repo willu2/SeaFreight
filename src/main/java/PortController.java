@@ -1,7 +1,7 @@
 public class PortController implements DBimplements {
 
     private PortDB portDB = new PortDB();
-    private String[][] portArray;// = portDB.getPortArray();
+    private String[][] portArray;   // = portDB.getPortArray();
 
     @Override
     public void loadAllDataFreigts() {
@@ -25,13 +25,10 @@ public class PortController implements DBimplements {
                         portArray[k+1][ii] = tempA[0][ii];
                     }
                 }
-
             }
         }
-        printArrayMap(portArray);
-
+        printFirstFiveItems(portArray);
     }
-
 
     @Override
     public void showHighestPrice(String[][] portArray) {
@@ -49,14 +46,10 @@ public class PortController implements DBimplements {
                         portArray[k+1][ii] = tempA[0][ii];
                     }
                 }
-
             }
         }
-        printArrayMap(portArray);
-
-       // System.out.println();
+        printFirstFiveItems(portArray);
     }
-
 
     @Override
     public void showHIghtSpeed(String[][] portArray) {
@@ -74,10 +67,9 @@ public class PortController implements DBimplements {
                         portArray[k+1][ii] = tempA[0][ii];
                     }
                 }
-
             }
         }
-        printArrayMap(portArray);
+        printFirstFiveItems(portArray);
         System.out.println();
     }
 
@@ -99,7 +91,7 @@ public class PortController implements DBimplements {
                 }
             }
         }
-        printArrayMap(portArray);
+        printFirstFiveItems(portArray);
     }
 
     @Override
@@ -120,7 +112,7 @@ public class PortController implements DBimplements {
                 }
             }
         }
-        printArrayMap(portArray);
+        printFirstFiveItems(portArray);
     }
 
     @Override
@@ -141,12 +133,20 @@ public class PortController implements DBimplements {
                 }
             }
         }
-        printArrayMap(portArray);
+        printFirstFiveItems(portArray);
     }
-
 
     private void printArrayMap(String[][] portArray) {
         for (int i = 0; i < portArray.length; i++) {
+            for (int j = 0; j < portArray[i].length; j++) {
+                printByColums(i, j);
+            }
+            System.out.println();
+        }
+    }
+
+    private void printFirstFiveItems(String[][] portArray) {
+        for (int i = 0; i < 7; i++) {
             for (int j = 0; j < portArray[i].length; j++) {
                 printByColums(i, j);
             }
@@ -172,31 +172,20 @@ public class PortController implements DBimplements {
     public void printAllVariants() {
         printArrayMap(portArray);
     }
-
-    public void showHighestPric(){
-        showHighestPrice(portArray);
-    }
-    public void showLowPric(){
-        showLowestPrice(portArray);
-    }
-
+    public void showHighestPric(){ showHighestPrice(portArray); }
+    public void showLowPric() { showLowestPrice(portArray); }
     public void showHightSpeed(){
         showHIghtSpeed(portArray);
     }
-
     public void showLowSpeed(){
         showLowSpeed(portArray);
     }
-
-
     public void showMaxMass(){
         showMaxMass(portArray);
     }
-
     public void showMinMass(){
         showMinMass(portArray);
     }
-
 
     private void printByColums(int i, int j){
         switch (j){
