@@ -1,7 +1,10 @@
+package seafreight.my.com;
+
+/*control data methods class*/
 public class PortController implements DBimplements {
 
     private PortDB portDB = new PortDB();
-    private String[][] portArray;   // = portDB.getPortArray();
+    private String[][] portArray;
 
     @Override
     public void loadAllDataFreigts() {
@@ -52,7 +55,7 @@ public class PortController implements DBimplements {
     }
 
     @Override
-    public void showHIghtSpeed(String[][] portArray) {
+    public void showHightSpeed(String[][] portArray) {
         boolean isSorted2 = false;
         String[][] tempA = new String[1][5];
 
@@ -168,25 +171,6 @@ public class PortController implements DBimplements {
         }
     }
 
-    @Override
-    public void printAllVariants() {
-        printArrayMap(portArray);
-    }
-    public void showHighestPric(){ showHighestPrice(portArray); }
-    public void showLowPric() { showLowestPrice(portArray); }
-    public void showHightSpeed(){
-        showHIghtSpeed(portArray);
-    }
-    public void showLowSpeed(){
-        showLowSpeed(portArray);
-    }
-    public void showMaxMass(){
-        showMaxMass(portArray);
-    }
-    public void showMinMass(){
-        showMinMass(portArray);
-    }
-
     private void printByColums(int i, int j){
         switch (j){
             case 0:
@@ -205,5 +189,25 @@ public class PortController implements DBimplements {
                 System.out.print(portArray[i][j] + "_$");
                 break;
         }
+    }
+
+    //adapter methods
+    @Override
+    public void printAllVariants() {
+        printArrayMap(portArray);
+    }
+    public void showHighestPric(){ showHighestPrice(portArray); }
+    public void showLowPric() { showLowestPrice(portArray); }
+    public void showHightSpeed(){
+        showHightSpeed(portArray);
+    }
+    public void showLowSpeed(){
+        showLowSpeed(portArray);
+    }
+    public void showMaxMass(){
+        showMaxMass(portArray);
+    }
+    public void showMinMass(){
+        showMinMass(portArray);
     }
 }

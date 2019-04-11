@@ -1,4 +1,5 @@
-import java.util.Arrays;
+package seafreight.my.com;
+
 import java.util.Random;
 
 public class PortDB {

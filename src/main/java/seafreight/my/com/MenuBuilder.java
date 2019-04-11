@@ -1,5 +1,8 @@
+package seafreight.my.com;
+
 public class MenuBuilder {
 
+    //show main text manu
     public void mainManu(){
     System.out.println("Menu :> ");
     System.out.println(" 1 :> Show all catalog ");
@@ -15,7 +18,7 @@ public class MenuBuilder {
     System.out.println("Enter position :> ");
 }
 
-
+    //show price enter menu
     public void priceEnter(){
         System.out.println("Enter limit price:  recomend: more then > 120000 ");
     }

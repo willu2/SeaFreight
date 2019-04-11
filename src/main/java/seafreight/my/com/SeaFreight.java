@@ -1,3 +1,5 @@
+package seafreight.my.com;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -6,20 +8,19 @@ public class SeaFreight {
     public static void main(String[] args) {
 
         boolean exit = false;
-PortDB  portDB = new PortDB();
+
         MenuBuilder menu = new MenuBuilder();
         PortController controller = new PortController();
         controller.loadAllDataFreigts();
 
         do {
-            int pos = 0;
             int price = 0;
 
             menu.mainManu();
 
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));   //get strig data
             try {
-                switch (pos = Integer.parseInt(in.readLine())) {
+                switch (Integer.parseInt(in.readLine())) {
                     case 1:
                         controller.printAllVariants();
                         break;
@@ -34,7 +35,6 @@ PortDB  portDB = new PortDB();
                         catch(NumberFormatException e)
                         {
                             System.out.println(e.getMessage() + " is not numeric");
-                           // System.exit(1);
                         }
 
                         controller.searchByPrice(price);
